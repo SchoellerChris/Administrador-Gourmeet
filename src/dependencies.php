@@ -23,11 +23,11 @@ return function (App $app) {
     $container['pdo'] = function ($c) {
         // better load the settings with $container->get('settings')
         $host = '127.0.0.1';
-        $dbname = 'sga2';
+        $dbname = 'gourmeet';
         $username = 'root';
         $password = '';
         $charset = 'utf8';
-        $collate = 'utf8_unicode_ci';
+        $collate = 'utf8_general_ci';
         $dsn = "mysql:host=$host;dbname=$dbname;charset=$charset";
         $options = [
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,

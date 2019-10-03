@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <meta name="theme-color" content="#1B6E74"> 
     <meta charset="utf-8" />
     <title>Gerenciador Gourmeet</title>
     <link href='//fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
@@ -20,18 +21,18 @@
    <h2>Gerenciador de cardápios</h2>
    <p>Por favor, digite seu email e senha</p>
    </div>
-    <form id="Login">
+    <form action="/login/" method="post" id="Login">
 
         <div class="form-group">
 
 
-            <input type="email" class="form-control" id="inputEmail" placeholder="Email Address">
+            <input type="email" class="form-control" name="email" id="inputEmail" placeholder="Endereço de email">
 
         </div>
 
         <div class="form-group">
 
-            <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+            <input type="password" class="form-control" name="senha" id="inputPassword" placeholder="Senha">
 
         </div>  
         <div class="forgot">
@@ -39,9 +40,9 @@
 </div>
         <button type="submit" class="btn btn-primary">Login</button>
         <hr>
-        <a href="cadastro/"><button type="submit" class="btn btn-primary">Cadastrar</button></a>
-
+        
     </form>
+    <a href="/cadastro/"><button type="submit" class="btn btn-primary">Cadastrar</button></a>
     </div>
 
 </div></div></div>

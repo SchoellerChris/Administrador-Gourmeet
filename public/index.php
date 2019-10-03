@@ -28,7 +28,7 @@ $middleware($app);
 // Register routes
 $routes = require __DIR__ . '/../src/routes.php';
 $routes($app);
-$routes = require __DIR__ . '/../src/rotaCadastro.php';
+$routes = require __DIR__ . '/../src/rotaLogin.php';
 $routes($app);
 
 // Run app
