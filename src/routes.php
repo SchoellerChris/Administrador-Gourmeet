@@ -11,9 +11,11 @@ return function (App $app) {
         // Sample log message
         $container->get('logger')->info("Slim-Skeleton '/' route");
 
+
         
 
         // Render index view
         return $container->get('renderer')->render($response, 'index.phtml', $args);
     });
+
 };

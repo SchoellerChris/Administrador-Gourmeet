@@ -25,11 +25,21 @@ return function (App $app) {
 
         $resultSet = $conexao->query('SELECT * FROM usuario WHERE email = "'. $params['email'] . '" AND senha = "' . md5($params['senha']) . '"')->fetchALL();
 
+
+        
         if (count($resultSet)==1) {
-            return $response -> withRedirect('/');
+            $_SESSION['login']['ehLogado'] = true;
+            $_SESSION['login']['nome'] = $resultSet['nome'];
+
+
+            return $response -> withRedirect('http://localhost:1234/');
+            
         } else {
-            return $response -> withRedirect('');
-            echo"Acesso Negado";   
+            
+            return $response -> withRedirect('/login/');
+            $_SESSION['ehLogado'] = false;
+            
+            return $response->withRedirect('/login/fail');
               
             exit;
         }
