@@ -1,3 +1,4 @@
+
 body#LoginForm{
   height: 100vh;
   background: linear-gradient(to bottom right, #1B6E74 0%, #B9B099 100%);
@@ -60,4 +61,28 @@ body#LoginForm{
 .form-heading{
     text-align: center;
 }
-
+#cardapioSel{
+  height: 100vh;
+  background: linear-gradient(to bottom left, #1B6E74 0%, #B9B099 100%);
+}
+#gerenciadorSel{
+  height: 100vh;
+  background: linear-gradient(to bottom right, #1B6E74 0%, #B9B099 100%);
+  
+}
+#cardapioSel:hover{
+ 
+  opacity: 0.92;
+}
+#gerenciadorSel:hover{
+  opacity: 0.92;
+ }
+ h1{
+   text-align: center;
+   margin-top: 50vh;
+   
+  }
+  h1:hover{
+    font-size: 7vh;
+  }
+  

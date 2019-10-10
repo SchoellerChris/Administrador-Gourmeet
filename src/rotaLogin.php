@@ -30,9 +30,10 @@ return function (App $app) {
         if (count($resultSet)==1) {
             $_SESSION['login']['ehLogado'] = true;
             $_SESSION['login']['nome'] = $resultSet['nome'];
+            $_SESSION['login']['senha'] = $resultSet['senha'];
 
 
-            return $response -> withRedirect('http://localhost:1234/');
+            return $response -> withRedirect('/selecao/');
             
         } else {
             
