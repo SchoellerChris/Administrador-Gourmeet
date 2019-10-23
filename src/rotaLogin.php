@@ -28,11 +28,9 @@ return function (App $app) {
 
         
         if (count($resultSet)==1) {
-            $_SESSION['login']['ehLogado'] = true;
-            $_SESSION['login']['nome'] = $resultSet['nome'];
+          
 
-
-            return $response -> withRedirect('http://localhost:1234/');
+            return $container->get('renderer')->render($response, 'gerenciador.phtml', $args);
             
         } else {
             

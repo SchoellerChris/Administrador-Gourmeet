@@ -30,6 +30,8 @@ $routes = require __DIR__ . '/../src/routes.php';
 $routes($app);
 $routes = require __DIR__ . '/../src/rotaLogin.php';
 $routes($app);
+$routes = require __DIR__ . '/../src/rotaCategoria.php';
+$routes($app);
 
 // Run app
 $app->run();
