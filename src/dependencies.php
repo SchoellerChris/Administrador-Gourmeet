@@ -23,8 +23,7 @@ return function (App $app) {
     $container['pdo'] = function ($c) {
         // better load the settings with $container->get('settings')
         $host = '127.0.0.1';
-        $dbname = 'gourmeet';
-        $username = 'root';
+        $username = 'gourmeet';
         $password = '';
         $charset = 'utf8';
         $collate = 'utf8_general_ci';
