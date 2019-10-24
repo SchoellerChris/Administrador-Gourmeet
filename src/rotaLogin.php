@@ -7,44 +7,46 @@ use Slim\Http\Response;
 return function (App $app) {
     $container = $app->getContainer();
 
-    $app->get('/login[{sucesso}]/', function (Request $request, Response $response, array $args) use ($container) {
+
+    $app->get('/login/', function (Request $request, Response $response, array $args) use ($container) {
         // Sample log message
-        $container->get('logger')->info("Slim-Skeleton '/login/' route");
-
-
-
-        // Render index view
-        return $container->get('renderer')->render($response, 'login.phtml', $args);
+        $container->get('logger')->info("Slim-Skeleton '/' route");  
+        
+        
+        return $container->get('renderer')->render($response, 'index.phtml', $args);
     });
-
+    
     $app->post('/login/', function (Request $request, Response $response, array $args) use ($container) {
-        // Sample log message
-        $container->get('logger')->info("Slim-Skeleton '/login/' route");
-
-        $conexao = $container->get('pdo');
         
-        $params = $request->getParsedBody();
+        $container->get('logger')->info("Slim-Skeleton '/' route");
 
-        $resultSet = $conexao->query('SELECT * FROM usuario WHERE email = "'. $params['email']. '" AND senha = "' . md5($params['senha']) . '"')->fetchAll();
+        $conexao = $container ->get('pdo');      
         
+        $params = $request -> getParsedBody();
 
-       
+        $resultSet = $conexao->query('SELECT * FROM usuario WHERE email = "'. $params['email'] . '" AND senha = "' . md5($params['senha']) . '"')->fetchALL();
 
-        if (count($resultSet) == 1) {
-            $_SESSION['login']['ehlogado'] = true;
-            $_SESSION ['login']['nome'] = true;
 
-            return $response->withRedirect('/login/'); 
+        
+        if (count($resultSet)==1) {
+          
 
-           
-        } else {
-            $_SESSION ['login']['ehlogado'] = false;
-            return $response->withRedirect('/login/fail'); 
+            return $container->get('renderer')->render($response, 'gerenciador.phtml', $args);
             
-           
+        } else {
+            
+            return $response -> withRedirect('/login/');
+            $_SESSION['ehLogado'] = false;
+            
+            return $response->withRedirect('/login/fail');
+              
+            exit;
         }
+        
 
+        
         // Render index view
-        return $container->get('renderer')->render($response, 'login.phtml', $args);
+        return $container->get('renderer')->render($response, 'index.phtml', $args);
+
     });
 };
