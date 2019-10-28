@@ -12,7 +12,7 @@ return function (App $app) {
         $container->get('logger')->info("Slim-Skeleton '/' route");  
         
         
-        return $container->get('renderer')->render($response, 'index.phtml', $args);
+        return $container->get('renderer')->render($response, 'gerenciador.phtml', $args);
     });
     
     $app->post('/login/', function (Request $request, Response $response, array $args) use ($container) {

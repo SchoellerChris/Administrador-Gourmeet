@@ -30,6 +30,7 @@ return function (App $app) {
         
 
         // Render index view
+         
         return $container->get('renderer')->render($response, 'cadastroCategoria.phtml', $args);
     });
 };

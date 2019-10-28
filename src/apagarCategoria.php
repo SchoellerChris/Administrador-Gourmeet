@@ -7,13 +7,16 @@ use Slim\Http\Response;
 return function (App $app) {
     $container = $app->getContainer();
 
-    $app->get('/apagarCategoria/[{idProduto}]', function (Request $request, Response $response, array $args) use ($container) {
+    $app->get('/apagarCategoria/[{idCategoria}]', function (Request $request, Response $response, array $args) use ($container) {
         // Sample log message
         $container->get('logger')->info("Slim-Skeleton '/' route");
+        $conexao = $container ->get('pdo');   
         
         
+      $resultSet =  $conexao->query('DELETE FROM categoria WHERE idCategoria = "'.$args['idCategoria'].'";');
+      
+      return $container->get('renderer')->render($response, 'gerenciador.phtml', $args);
 
-
-        return $container->get('renderer')->render($response, 'viewCategoria.phtml', $args);
+        
     });
 };
