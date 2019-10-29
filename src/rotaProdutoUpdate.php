@@ -14,7 +14,7 @@ return function (App $app) {
         $params = $request -> getParsedBody();
 
         // Busca todos os produtos
-        $resultSet = $conexao->query('UPDATE produto '".$params['nomeProduto']."';')->fetchAll();
+        //$resultSet = $conexao->query('UPDATE produto '".$params['nomeProduto']."';')->fetchAll();
 
 
         $args['produtos'] = $resultSet;

@@ -36,6 +36,8 @@ $routes = require __DIR__ . '/../src/categoriaCadastro.php';
 $routes($app);
 $routes = require __DIR__ . '/../src/apagarCategoria.php';
 $routes($app);
+$routes = require __DIR__ . '/../src/apagarProduto.php';
+$routes($app);
 $routes = require __DIR__ . '/../src/rotaProduto.php';
 $routes($app);
 $routes = require __DIR__ . '/../src/rotaProdutoEditar.php';
