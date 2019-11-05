@@ -29,11 +29,11 @@
                         <?
                         foreach ($produtoEditar as $key => $value) {
                             echo "<input type='hidden' name='idProduto' value='" . $value['idProduto'] . "'>"; 
-                            echo "<input type='text' class='form-control' name='nome' id='produtoInput' placeholder='" . $value['nomeProduto'] . "'>" . "</input>";
+                            echo "<input type='text' class='form-control' name='nome' id='produtoInput' value='" . $value['nomeProduto'] . "'>" . "</input>";
                             echo "<div class='mt-3'>" . "</div>";
-                            echo "<textarea class='form-control' id='exampleFormControlTextarea1' name='descricao' rows='10' placeholder='" . $value['descProduto'] . "'>" . "</textarea>";
+                            echo "<textarea class='form-control' id='exampleFormControlTextarea1' name='descricao' rows='10' value='" . $value['descProduto'] . "'>" . "</textarea>";
                             echo "<div class='mt-3'>" . "</div>";
-                            echo "<input type='number' step='any' min='0' max='100' class='form-control' name='preco' id='produtoInput' placeholder='" . "R$ " . $value['precoProduto'] . "'>" . "</input>";
+                            echo "<input type='number' step='any' min='0' max='100' class='form-control' name='preco' id='produtoInput' value='" . $value['precoProduto'] . "'>" . "</input>";
                         }
                         ?>
 
