@@ -46,6 +46,9 @@ $routes = require __DIR__ . '/../src/apagarProduto.php';
 $routes($app);
 $routes = require __DIR__ . '/../src/produtoCadastro.php';
 $routes($app);
+$routes = require __DIR__ . '/../src/rotaPedido.php';
+$routes($app);
+
 
 
 
